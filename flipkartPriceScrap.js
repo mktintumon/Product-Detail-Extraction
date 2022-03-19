@@ -4,6 +4,9 @@ const fs = require('fs')
 const path = require('path')
 
 const fktUrl = 'https://www.flipkart.com/search?q=best+wireless+earphone&as=on&as-show=on&otracker=AS_Query_HistoryAutoSuggest_1_4_na_na_na&otracker1=AS_Query_HistoryAutoSuggest_1_4_na_na_na&as-pos=1&as-type=HISTORY&suggestionId=best+wireless+earphone&requestId=afb50011-401f-4ce5-af58-137eea597e8e&as-searchtext=best'
+
+function flipkartScrap(){
+
 request(fktUrl , cb)
 
 function cb(error, response, html) {
@@ -37,6 +40,11 @@ function flipkart(html) {
     
     }
 
+}
+}
+
+module.exports={
+    flipkartDetail : flipkartScrap
 }
 
 
