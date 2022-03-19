@@ -19,5 +19,5 @@ npm install -----> this command will help to install project dependencies.
 
 After all the modules get installed then run the price.js file using the following command:
 
->> <b>node index.js</b>
+>> <b>node price.js</b>
   
