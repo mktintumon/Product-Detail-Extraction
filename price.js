@@ -29,16 +29,16 @@ async function extractPrice(){
           await newTab.type('input[id="inputValEnter"]', product , {delay:100})
           await newTab.click('.searchTextSpan')
 
-          await newTab.waitForNavigation()
+          await newTab.waitForNavigation(newTab.url())
 
           const url1 = await newTab.url()
 
-          console.log('------------------------AMAZON PRODUCT DETAILS-------------------------------')
+          console.log('------------------------SNAPDEAL PRODUCT DETAILS-------------------------------')
           console.log('`````````````````````````````````````````````````````````````````````````````')
           
           ap.amazonDetail(url1)
 
-          await newTab.waitForTimeout(4000)
+          await newTab.waitForTimeout(1000)
 
 
           //flipkart 
@@ -61,7 +61,7 @@ async function extractPrice(){
           
           fp.flipkartDetail(url2)
 
-          await newtab2.waitForTimeout(4000);
+          await newtab2.waitForTimeout(2000);
 
           await browser.close()
 
