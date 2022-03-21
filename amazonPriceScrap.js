@@ -17,9 +17,9 @@ function cb(error, response, html) {
 function amazon(html) {
     let $ = cheerio.load(html)
 
-    let prodNameArr = $('.a-size-mini.a-spacing-none.a-color-base.s-line-clamp-2 .a-size-medium.a-color-base.a-text-normal')
-    let prodPriceArr = $('.a-price-whole')
-    let prodRatingArr = $('.a-row.a-size-small span a i span')
+    let prodNameArr = $('.product-title')
+    let prodPriceArr = $('.lfloat.product-price')
+    let prodRatingArr = $('.product-rating-count')
 
     for(let i=0 ; i<10 ; i++){
     let brand = $(prodNameArr[i]).text()    
@@ -28,7 +28,7 @@ function amazon(html) {
 
     console.log("Brand->" , brand)
     console.log("Price->" , price)
-    console.log("Rating->", rating)
+    console.log("Rating count->", rating)
     console.log("===========================================================")
     
     }

@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer")
 const args = process.argv.slice(2)
 const product = args[0]
 
-const amazonLink = "https://www.amazon.in/";
+const snapdealLink = "https://www.snapdeal.com/";
 const flipkartLink = "https://www.flipkart.com/";
 const ap = require('./amazonPriceScrap')
 const fp = require('./flipkartPriceScrap')
@@ -22,12 +22,14 @@ async function extractPrice(){
           //amazon
           let newTab = await browser.newPage(); 
         
-          await newTab.goto(amazonLink)
+          await newTab.goto(snapdealLink)
 
-          await newTab.waitForSelector('#twotabsearchtextbox')
+          await newTab.waitForSelector('input[id="inputValEnter"]')
 
-          await newTab.type('#twotabsearchtextbox', product , {delay:100})
-          await newTab.click('#nav-search-submit-button')
+          await newTab.type('input[id="inputValEnter"]', product , {delay:100})
+          await newTab.click('.searchTextSpan')
+
+          await newTab.waitForNavigation()
 
           const url1 = await newTab.url()
 
