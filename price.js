@@ -5,7 +5,7 @@ const product = args[0]
 
 const snapdealLink = "https://www.snapdeal.com/";
 const flipkartLink = "https://www.flipkart.com/";
-const ap = require('./amazonPriceScrap')
+const ap = require('./snapdealPriceScrap')
 const fp = require('./flipkartPriceScrap')
 
 
