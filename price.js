@@ -1,11 +1,13 @@
 const puppeteer = require("puppeteer")
 
+const args = process.argv.slice(2)
+const product = args[0]
+
 const amazonLink = "https://www.amazon.in/";
 const flipkartLink = "https://www.flipkart.com/";
 const ap = require('./amazonPriceScrap')
 const fp = require('./flipkartPriceScrap')
 
-const product = "best wireless earphone";
 
 async function extractPrice(){
     
@@ -27,10 +29,14 @@ async function extractPrice(){
           await newTab.type('#twotabsearchtextbox', product , {delay:100})
           await newTab.click('#nav-search-submit-button')
 
-          console.log('------------------------AMAZON PRODUCT DETAILS--------------------------------------')
-          console.log('````````````````````````````````````````````````````````````````````````````````````')
+          const url1 = await newTab.url()
+
+          console.log('------------------------AMAZON PRODUCT DETAILS-------------------------------')
+          console.log('`````````````````````````````````````````````````````````````````````````````')
           
-          ap.amazonDetail()
+          ap.amazonDetail(url1)
+
+          await newTab.waitForTimeout(4000)
 
 
           //flipkart 
@@ -45,11 +51,15 @@ async function extractPrice(){
           await newtab2.type('._3704LK' , product , {delay:100} )
 
           await newtab2.click('.L0Z3Pu')    
+
+          const url2 = await newtab2.url()
           
-          console.log('-------------------FLIPKART PRODUCTS DETAILS------------------------------------------')
-          console.log('``````````````````````````````````````````````````````````````````````````````````````')
+          console.log('-------------------FLIPKART PRODUCTS DETAILS--------------------------------')
+          console.log('````````````````````````````````````````````````````````````````````````````')
           
-          fp.flipkartDetail()
+          fp.flipkartDetail(url2)
+
+          await newtab2.waitForTimeout(4000);
 
           await browser.close()
 

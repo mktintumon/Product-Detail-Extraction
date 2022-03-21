@@ -1,9 +1,7 @@
 const request = require('request')
 const cheerio = require('cheerio')
 
-const url = 'https://www.amazon.in/s?k=best+wireless+earphone&crid=2UZJGPBBD5TM9&sprefix=best+wireless+earphone%2Caps%2C317&ref=nb_sb_noss_1'
-
-function amazonScrap(){
+function amazonScrap(url){
 
 request(url , cb)
 
