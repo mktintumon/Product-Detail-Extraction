@@ -10,7 +10,7 @@ The websites used for fetching information are: amazon.in and flipkart.com
   <i>
 <li>This project will extract the details of searched products from the Amazon.in and Flipkart.com.</li>
 <li>Fetch the details of product as its price , brand , color and rating.</li>
-<li>Automation used for visualisation of theh scraped websites.</li>
+<li>Automation used for visualisation of the scraped websites.</li>
   </i>
 </ul>
 
