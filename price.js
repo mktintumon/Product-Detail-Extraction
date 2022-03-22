@@ -19,7 +19,7 @@ async function extractPrice(){
         });
 
 
-          //amazon
+          //snapdeal automation
           let newTab = await browser.newPage(); 
         
           await newTab.goto(snapdealLink)
@@ -41,7 +41,7 @@ async function extractPrice(){
           await newTab.waitForTimeout(1000)
 
 
-          //flipkart 
+          //flipkart automation
           let newtab2 = await browser.newPage()
 
           await newtab2.goto(flipkartLink)
@@ -62,6 +62,8 @@ async function extractPrice(){
           fp.flipkartDetail(url2)
 
           await newtab2.waitForTimeout(2000);
+
+          console.log('*********HAPPY SHOPPING************')
 
           await browser.close()
 
